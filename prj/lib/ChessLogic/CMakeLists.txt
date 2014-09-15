@@ -1,0 +1,7 @@
+file(GLOB CHESSLOGIC_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+set(CHESSLOGIC_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/inc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
+if(UNIX)
+  add_definitions(-std=c++11 -pedantic -Wall)
+endif(UNIX)
+add_library(ChessLogic ${CHESSLOGIC_SRCS})
