@@ -13,8 +13,9 @@
 class Queen: public ChessPiece
 {
 		Queen(ChessPieceColor color): ChessPiece(color){}
-		bool isMoveCorrect(ChessboardFieldCoordinates& from,
-				ChessboardFieldCoordinates& to) const override;
+		bool isMoveCorrect(const ChessboardFieldCoordinates& from,
+				const ChessboardFieldCoordinates& to) const override;
+		bool isQueen() const override { return true; }
 };
 
 

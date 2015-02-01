@@ -7,3 +7,9 @@
 
 #include "Queen.hpp"
 
+bool Queen::isMoveCorrect(const ChessboardFieldCoordinates& from,
+		const ChessboardFieldCoordinates& to) const
+{
+	//TODO
+	return true;
+}

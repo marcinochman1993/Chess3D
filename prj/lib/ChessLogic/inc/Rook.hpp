@@ -16,7 +16,7 @@ public:
 		Rook(ChessPieceColor color):ChessPiece(color){}
 		bool isMoveCorrect(const ChessboardFieldCoordinates& from,
 				const ChessboardFieldCoordinates& to) const override;
+		bool isRook() const override { return true; }
 };
-
 
 #endif /* ROOK_HPP_ */

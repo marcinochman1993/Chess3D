@@ -12,8 +12,8 @@
 bool Bishop::isMoveCorrect(const ChessboardFieldCoordinates& from,
 		const ChessboardFieldCoordinates& to) const
 {
-	const unsigned rowFrom=from.rowToUint(), columnFrom=from.column(),
-			rowTo=to.rowToUint(),columnTo=to.column();
+	/*const unsigned rowFrom=from.rowToUint(), columnFrom=from.column(),
+			rowTo=to.rowToUint(),columnTo=to.column();*/
 
 	return abs(1)==abs(-1);
 }

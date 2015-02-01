@@ -14,6 +14,7 @@ class Bishop: public ChessPiece
 {
 		bool isMoveCorrect(const ChessboardFieldCoordinates& from,
 				const ChessboardFieldCoordinates& to) const override;
+		bool isBishop() const override { return true; }
 };
 
 

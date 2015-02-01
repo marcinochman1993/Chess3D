@@ -1,11 +1,8 @@
 add_subdirectory(lib)
-add_subdirectory(test)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib/ChessLogic/inc)
 if(UNIX)
   add_definitions(-std=c++11 -pedantic -Wall)
 endif(UNIX)
 set(CHESS_EXTRA_LIBS ${CHESS_EXTRA_LIBS} ChessLogic)
 add_executable(chess ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
-set_target_properties(chess PROPERTIES 
-    RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(chess ${CHESS_EXTRA_LIBS})

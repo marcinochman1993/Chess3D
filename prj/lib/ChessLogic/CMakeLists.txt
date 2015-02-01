@@ -1,3 +1,4 @@
+add_subdirectory(test)
 file(GLOB CHESSLOGIC_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 set(CHESSLOGIC_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)

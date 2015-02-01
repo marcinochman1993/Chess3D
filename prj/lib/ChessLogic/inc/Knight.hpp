@@ -13,7 +13,10 @@
 
 class Knight: public ChessPiece
 {
-
+public:
+	bool isMoveCorrect(const ChessboardFieldCoordinates& from,
+			const ChessboardFieldCoordinates& to) const override;
+	bool isKnight() const override { return true; }
 };
 
 

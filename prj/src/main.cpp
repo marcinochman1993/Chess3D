@@ -6,9 +6,9 @@
  */
 
 #include "ChessboardFieldCoordinates.hpp"
+#include <iostream>
 
 int main(int argc, char* argv[])
 {
-	ChessboardFieldCoordinates coord;
-	coord.column(0);
+	std::cout<<"Hello world\n";
 }

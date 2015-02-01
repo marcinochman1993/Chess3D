@@ -10,16 +10,18 @@
 
 #include "ChessboardField.hpp"
 #include "ChessboardFieldCoordinates.hpp"
+#include <set>
 
 class Chessboard
 {
 public:
+		Chessboard():m_fields(64){ }
 		ChessboardField& operator[](const ChessboardFieldCoordinates coordinates);
 		const ChessboardField& operator[](const ChessboardFieldCoordinates coordinates) const;
 		ChessboardField& operator ()(char row, unsigned column);
 		const ChessboardField& operator ()(char row, unsigned column) const;
 private:
-
+		std::set<ChessboardField> m_fields;
 };
 
 

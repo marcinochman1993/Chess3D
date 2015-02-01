@@ -7,13 +7,9 @@
 
 #include "Pawn.hpp"
 
-bool Pawn::isMoveCorrect(ChessboardFieldCoordinates& from,
-		ChessboardFieldCoordinates& to) const
+bool Pawn::isMoveCorrect(const ChessboardFieldCoordinates& from,
+		const ChessboardFieldCoordinates& to) const
 {
-	int rowFrom=static_cast<int>(from.rowToUint()),
-			columnFrom=static_cast<int>(from.column()),
-			rowTo=static_cast<int>(to.rowToUint()),
-			columnTo=static_cast<int>(to.column());
-
-	return () || () || () || ();
+	//TODO
+	return true;
 }

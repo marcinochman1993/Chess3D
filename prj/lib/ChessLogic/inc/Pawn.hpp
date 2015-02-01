@@ -13,8 +13,9 @@
 class Pawn: public ChessPiece
 {
 		Pawn(ChessPieceColor color): ChessPiece(color){}
-		bool isMoveCorrect(ChessboardFieldCoordinates& from,
-				ChessboardFieldCoordinates& to) const override;
+		bool isMoveCorrect(const ChessboardFieldCoordinates& from,
+				const ChessboardFieldCoordinates& to) const override;
+		bool isPawn() const override { return true; }
 };
 
 

@@ -5,3 +5,11 @@
  *      Author: mochman
  */
 
+#include "ChessPiece.hpp"
+
+
+ChessPieceColor ChessPiece::opponentColor() const
+{
+	return color() == ChessPieceColor::BLACK ?
+			ChessPieceColor::WHITE : ChessPieceColor::WHITE;
+}

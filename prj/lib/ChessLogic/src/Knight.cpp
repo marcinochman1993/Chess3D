@@ -5,6 +5,11 @@
  *      Author: mochman
  */
 
+#include "Knight.hpp"
 
-
-
+bool Knight::isMoveCorrect(const ChessboardFieldCoordinates& from,
+		const ChessboardFieldCoordinates& to) const
+{
+	//TODO
+	return true;
+}

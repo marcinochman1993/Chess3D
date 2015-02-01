@@ -31,7 +31,15 @@ class ChessPiece
 		ChessPieceColor color() const { return m_color; }
 		void hasMoved() { m_moved=true; }
 		bool moved() const { return m_moved; }
+		virtual bool isBishop() const { return false; }
+		virtual bool isKing() const { return false; }
+		virtual bool isKnight() const { return false; }
+		virtual bool isPawn() const { return false; }
+		virtual bool isQueen() const { return false; }
+		virtual bool isRook() const { return false; }
 		virtual ~ChessPiece(){}
+	protected:
+		ChessPieceColor opponentColor() const;
 	private:
 		const ChessPieceColor m_color;
 		bool m_moved;
