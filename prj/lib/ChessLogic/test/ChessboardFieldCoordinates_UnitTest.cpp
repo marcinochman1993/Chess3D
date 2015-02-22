@@ -5,11 +5,11 @@
  *      Author: mochman
  */
 
-#define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE CHESSBOARD_FIELD_COORDINATES_TEST
 
 #include <boost/test/unit_test.hpp>
 #include "ChessboardFieldCoordinates.hpp"
+
+BOOST_AUTO_TEST_SUITE(ChessboatrdFieldCoordinatesTests)
 
 BOOST_AUTO_TEST_CASE(Rows)
 {
@@ -40,7 +40,7 @@ BOOST_AUTO_TEST_CASE(AccessorsMutators)
 	BOOST_CHECK_EQUAL(coords.row(),'A');
 }
 
-BOOST_AUTO_TEST_CASE(Operators)
+BOOST_AUTO_TEST_CASE(CompareOperators)
 {
 	ChessboardFieldCoordinates a,b('g',8),c('d',3),d('d',4),e('d',5),f;
 	BOOST_CHECK(a==f);
@@ -53,3 +53,5 @@ BOOST_AUTO_TEST_CASE(Operators)
 	BOOST_CHECK(a<=c);
 	BOOST_CHECK(b>=e);
 }
+
+BOOST_AUTO_TEST_SUITE_END()

@@ -5,12 +5,10 @@
  *      Author: mochman
  */
 
-#define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE ROOK_TEST
-
 #include "Rook.hpp"
 #include <boost/test/unit_test.hpp>
 
+BOOST_AUTO_TEST_SUITE(ChessboatrdFieldCoordinatesTests)
 
 BOOST_AUTO_TEST_CASE(MovementValidation)
 {
@@ -22,3 +20,5 @@ BOOST_AUTO_TEST_CASE(MovementValidation)
 	BOOST_CHECK(r.isMoveCorrect(a,c));
 	BOOST_CHECK(!r.isMoveCorrect(a,d));
 }
+
+BOOST_AUTO_TEST_SUITE_END()

@@ -5,10 +5,17 @@
  *      Author: mochman
  */
 
-#include "ChessboardFieldCoordinates.hpp"
 #include <iostream>
-
+#include "AllegroGameWindow.hpp"
+#include <allegro5/allegro5.h>
+#include "String.hpp"
+#include "Configuration/ConfigurationManager.hpp"
+#include "Configuration/ConfigurationReader.hpp"
 int main(int argc, char* argv[])
 {
-	std::cout<<"Hello world\n";
+	MOSoft::String::String s = u8"Ala ma kotka, kubek i pastę - do zębów";
+	auto vec=s.split("- ,");
+	for(auto i:vec)
+		if(!i.empty())
+		std::cout<<i<<std::endl;
 }
