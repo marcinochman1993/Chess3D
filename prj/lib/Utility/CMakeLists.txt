@@ -1,6 +1,5 @@
 add_subdirectory(test)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeFind")
-find_package(RapidXml)
 find_package(Boost REQUIRED)
 file(GLOB_RECURSE Utility_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 include_directories(inc)

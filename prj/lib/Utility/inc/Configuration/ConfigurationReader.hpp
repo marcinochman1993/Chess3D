@@ -8,7 +8,7 @@
 #ifndef PRJ_LIB_GAMEENGINE_INC_CONFIGURATIONREADER_HPP_
 #define PRJ_LIB_GAMEENGINE_INC_CONFIGURATIONREADER_HPP_
 
-#include "String.hpp"
+#include "../String/String.hpp"
 #include "ConfigurationManager.hpp"
 
 namespace MOSoft

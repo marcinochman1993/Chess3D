@@ -7,17 +7,33 @@
 
 #include "Configuration/ConfigurationManager.hpp"
 
-void MOSoft::Configuration::ConfigurationManager::addEntry(const MOSoft::String::String& name,
-		const MOSoft::String::String& value)
+void MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::addEntry(
+		const ConfigurationEntry& entry)
 {
-	if (containsOption(value))
-		throw ""; // TODO nowy wyjątek napisać
-	m_settings.insert(std::make_pair(name, value));
+	m_children.insert(entry);
 }
 
-bool MOSoft::Configuration::ConfigurationManager::containsOption(
-		const MOSoft::String::String& optionName) const
+bool MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::operator==(
+		const ConfigurationEntry& entry) const
 {
-	auto foundIt = m_settings.find(optionName);
-	return foundIt != m_settings.cend();
+	return name() == name() && attributes() == entry.attributes()
+			&& children() == entry.children();
+}
+
+bool MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::operator<(
+		const ConfigurationEntry& entry) const
+{
+	return name() < entry.name()
+			|| (name() == entry.name() && attributes() < entry.attributes())
+			|| (name() == entry.name() && attributes() == entry.attributes()
+					&& children() < entry.children());
+}
+
+bool MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::operator>(
+		const ConfigurationEntry& entry) const
+{
+	return name() > entry.name()
+				|| (name() == entry.name() && attributes() > entry.attributes())
+				|| (name() == entry.name() && attributes() == entry.attributes()
+						&& children() > entry.children());
 }

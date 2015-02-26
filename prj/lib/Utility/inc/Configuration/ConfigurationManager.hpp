@@ -8,8 +8,9 @@
 #ifndef PRJ_LIB_UTILITY_INC_CONFIGURATION_CONFIGURATIONMANAGER_HPP_
 #define PRJ_LIB_UTILITY_INC_CONFIGURATION_CONFIGURATIONMANAGER_HPP_
 
-#include "String.hpp"
 #include <map>
+#include <set>
+#include "String.hpp"
 
 namespace MOSoft
 {
@@ -18,12 +19,34 @@ namespace MOSoft
 		class ConfigurationManager
 		{
 			public:
+				class ConfigurationEntry
+				{
+					public:
+						ConfigurationEntry() = default;
+						void addEntry(const ConfigurationEntry& entry);
+						void addAttribute(const String::String& attrName, const String::String& attrValue);
+						const String::String& name() const { return m_name; }
+						void name(const String::String& newName);
+						const std::set<ConfigurationEntry>& children() const { return m_children; }
+						const std::map<String::String, String::String> attributes() const { return m_attributes; }
+						bool operator==(const ConfigurationEntry& entry) const;
+						bool operator!=(const ConfigurationEntry& entry) const { return !(*this==entry); }
+						bool operator<(const ConfigurationEntry& entry) const;
+						bool operator>=(const ConfigurationEntry& entry) const { return !(*this<entry); }
+						bool operator>( const ConfigurationEntry& entry) const;
+						bool operator<=(const ConfigurationEntry& entry) const { return !(*this>entry); }
+					private:
+						String::String m_name;
+						std::map<String::String, String::String> m_attributes;
+						std::set<ConfigurationEntry> m_children;
+				};
+
 				ConfigurationManager() = default;
-				void addEntry(const MOSoft::String::String& name, const MOSoft::String::String& value);
-				const MOSoft::String::String& operator[](const MOSoft::String::String& optionName) const;
+				const MOSoft::String::String& operator[](
+						const MOSoft::String::String& optionName) const;
+
 			private:
-				bool containsOption(const MOSoft::String::String& optionName) const;
-				std::map<MOSoft::String::String,MOSoft::String::String> m_settings;
+				ConfigurationEntry m_mainEntry;
 
 		};
 	}
