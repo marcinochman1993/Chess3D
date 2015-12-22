@@ -7,33 +7,12 @@
 
 #include "Configuration/ConfigurationManager.hpp"
 
-void MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::addEntry(
-		const ConfigurationEntry& entry)
-{
-	m_children.insert(entry);
-}
+using namespace MOSoft::Configuration;
+using namespace MOSoft::String;
 
-bool MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::operator==(
-		const ConfigurationEntry& entry) const
+const MOSoft::String::String& ConfigurationManager::operator[](const MOSoft::String::String& optionName) const
 {
-	return name() == name() && attributes() == entry.attributes()
-			&& children() == entry.children();
-}
 
-bool MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::operator<(
-		const ConfigurationEntry& entry) const
-{
-	return name() < entry.name()
-			|| (name() == entry.name() && attributes() < entry.attributes())
-			|| (name() == entry.name() && attributes() == entry.attributes()
-					&& children() < entry.children());
-}
 
-bool MOSoft::Configuration::ConfigurationManager::ConfigurationEntry::operator>(
-		const ConfigurationEntry& entry) const
-{
-	return name() > entry.name()
-				|| (name() == entry.name() && attributes() > entry.attributes())
-				|| (name() == entry.name() && attributes() == entry.attributes()
-						&& children() > entry.children());
+  return "";
 }

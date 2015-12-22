@@ -1,3 +1,5 @@
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 add_subdirectory(lib)
 set(MY_LIBS_PATH "lib/")
 list(APPEND MY_LIBS_INCLUDES  ${MY_LIBS_PATH}/ChessLogic/inc ${MY_LIBS_PATH}/GameEngine/inc 
