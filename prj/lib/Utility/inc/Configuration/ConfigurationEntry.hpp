@@ -29,11 +29,11 @@ namespace MOSoft
       const std::set<ConfigurationEntry>& children() const { return m_children; }
       const std::map<String::String, String::String> attributes() const { return m_attributes; }
       bool operator==(const ConfigurationEntry& entry) const;
-      bool operator!=(const ConfigurationEntry& entry) const { return !(*this==entry); }
+      bool operator!=(const ConfigurationEntry& entry) const { return !(*this == entry); }
       bool operator<(const ConfigurationEntry& entry) const;
-      bool operator>=(const ConfigurationEntry& entry) const { return !(*this<entry); }
+      bool operator>=(const ConfigurationEntry& entry) const { return !(*this < entry); }
       bool operator>( const ConfigurationEntry& entry) const;
-      bool operator<=(const ConfigurationEntry& entry) const { return !(*this>entry); }
+      bool operator<=(const ConfigurationEntry& entry) const { return !(*this > entry); }
     private:
       String::String m_name;
       std::map<String::String, String::String> m_attributes;

@@ -9,11 +9,14 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <libxml++/libxml++.h>
+
+using namespace MOSoft::Configuration;
 
 
-MOSoft::Configuration::ConfigurationManager MOSoft::Configuration::ConfigurationReader::parse()
+ConfigurationManager ConfigurationReader::parse()
 {
-	ConfigurationManager configurationManager;
-	//todo implement
-	return configurationManager;
+  ConfigurationManager configurationManager;
+	
+  return configurationManager;
 }

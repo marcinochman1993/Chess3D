@@ -13,10 +13,6 @@
 #include <memory>
 int main(int argc, char* argv[])
 {
-	MOSoft::String::String s = u8"Ala ma kotka, kubek i pastę - do zębów";
-	auto vec=s.split("- ,");
-	for(auto i:vec)
-		if(!i.isEmpty())
-			std::cout<<i<<std::endl;
+  std::cout << "Witaj swiecie!\n";
 
 }
