@@ -39,7 +39,6 @@ namespace MOSoft
       std::map<String::String, String::String> m_attributes;
       std::set<ConfigurationEntry> m_children;
     };
-
   }
 }
 #endif // CONFIGURATION_ENTRY_HPP

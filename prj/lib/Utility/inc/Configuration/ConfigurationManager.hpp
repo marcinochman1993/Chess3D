@@ -21,10 +21,10 @@ namespace MOSoft
     {
     public:    
       ConfigurationManager() = default;
-      const MOSoft::String::String& operator[](const MOSoft::String::String& optionName) const;
-      
+      const String::String& operator[](const String::String& optionName) const;
+      void addEntry(const ConfigurationEntry& entry);
     private:
-      ConfigurationEntry m_mainEntry;
+      std::vector<ConfigurationEntry> m_mainEntries;
 
     };
   }

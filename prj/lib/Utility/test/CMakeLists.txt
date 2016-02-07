@@ -1,9 +1,16 @@
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-include_directories (${Boost_INCLUDE_DIRS} )
+find_package(LibXML++ REQUIRED)
+include_directories (${Boost_INCLUDE_DIRS} ${LibXML++_INCLUDE_DIRS})
 if(UNIX)
   add_definitions(-std=c++11 -pedantic -Wall)
 endif(UNIX)
 file(GLOB TEST_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
 add_executable(UtilityTest ${TEST_SRCS})
 target_link_libraries(UtilityTest ${Boost_LIBRARIES} Utility)
-add_test(UtilityTest UtilityTest)
+add_test(UtilityTest UtilityTest ${LibXML++_LIBRARIES})
+
+set(RSRC_FOLDER rsrc/)
+file(GLOB RSRC_FILES rsrc/* )
+
+file(MAKE_DIRECTORY ${RSRC_FOLDER})
+file(COPY ${RSRC_FILES} DESTINATION ${RSRC_FOLDER} )

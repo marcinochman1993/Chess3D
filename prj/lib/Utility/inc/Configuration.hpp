@@ -11,6 +11,6 @@
 
 #include "Configuration/ConfigurationManager.hpp"
 #include "Configuration/ConfigurationReader.hpp"
-
+#include "Configuration/XmlConfigReader.hpp"
 
 #endif /* PRJ_LIB_UTILITY_INC_CONFIGURATION_HPP_ */

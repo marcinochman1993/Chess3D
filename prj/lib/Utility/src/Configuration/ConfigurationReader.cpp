@@ -14,6 +14,7 @@
 using namespace MOSoft::Configuration;
 
 
+
 ConfigurationManager ConfigurationReader::parse()
 {
   ConfigurationManager configurationManager;

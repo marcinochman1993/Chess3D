@@ -18,12 +18,14 @@ namespace MOSoft
     class ConfigurationReader
     {
     public:
-      explicit ConfigurationReader(const MOSoft::String::String& path):m_path(path) { }
+      explicit ConfigurationReader(const String::String& path):m_path(path) { }
       ConfigurationReader(const ConfigurationReader& confReader) = delete;
       virtual ConfigurationManager parse();
       virtual ~ConfigurationReader() { }
+      const String::String& path() { return m_path; }
+      virtual bool extensionSupported(const String::String& extension) { return true; }
     private:
-      const MOSoft::String::String m_path;
+      const String::String m_path;
     };
   }
 }

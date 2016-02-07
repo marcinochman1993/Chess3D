@@ -18,4 +18,4 @@ add_executable(chess src/main.cpp)
 
 message(STATUS "XXX: ${LibXML++_LIBRARIES}")
 
-target_link_libraries(chess  ${LibXML++_LIBRARIES})
+target_link_libraries(chess  ${CHESS_EXTRA_LIBS})

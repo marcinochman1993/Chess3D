@@ -10,9 +10,18 @@
 #include "String.hpp"
 #include "Configuration/ConfigurationManager.hpp"
 #include "Configuration/ConfigurationReader.hpp"
+#include "Configuration/XmlConfigReader.hpp"
 #include <memory>
+
+
+using namespace MOSoft::Configuration;
+
 int main(int argc, char* argv[])
 {
-  std::cout << "Witaj swiecie!\n";
+  std::cout << __FILE__ << std::endl;
+
+  XmlConfigReader reader(("/home/mochman/Projects/Chess3D/prj/config/config.xml"));
+
+  reader.parse();
 
 }
